@@ -2,8 +2,10 @@
   "name": "react-server",
   "version": "1.0.0",
   "description": "intro to react using server",
-  "main": "src/index.js",
+  "main": "build/server.js",
   "scripts": {
+    "build": "babel src/ -d build/",
+    "start": "npm run build && node build/server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,5 +27,10 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
   }
 }

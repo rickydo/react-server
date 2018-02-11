@@ -13,3 +13,9 @@ on the client and on the server.
 This way you can use single files to work on both sides
 
 How to make this app Idiomatic?
+
+
+.babelrc
+babel config files
+// before node even starts, wrap up and convert
+// conversions in es6 to es5, allows class instead of className

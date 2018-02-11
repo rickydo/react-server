@@ -97,16 +97,9 @@ class Register extends React.Component {
   }
 };
 
-
-ReactDOMServer.render(
-  (<Layout title="Login">
-    <Login />
-  </Layout>), document.getElementById('app')
-);
-
-
+// the below code could be moved to server.js file for idiomacy
 module.exports = {
-  register: function(msg) {
+  register(msg) {
     return ReactDOMServer.renderToString(<Register msg={msg}/>);
   }
 }
