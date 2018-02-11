@@ -19,3 +19,8 @@ How to make this app Idiomatic?
 babel config files
 // before node even starts, wrap up and convert
 // conversions in es6 to es5, allows class instead of className
+
+Todo:
+complete server side Login
+figure out full auth
+make react stuff fully Idiomatic
