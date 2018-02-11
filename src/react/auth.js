@@ -74,7 +74,7 @@ class Pssword extends React.Component {
                 key="password2" onChange={this.onChange} />]
     }
     if(this.props.msg){
-      ch.push(<div className="error-message">{this.props.msg}</div>)
+      ch.push(<div className="error-message" key="error">{this.props.msg}</div>)
     }
 
     return(
@@ -87,7 +87,7 @@ class Pssword extends React.Component {
 class Register extends React.Component {
   render(){
     return(
-      <form method="post" acceptCharset="utf-8" action="/u/register">
+      <form method="post" acceptCharset="utf-8" action="/register">
         <Email />
         <Pssword twice="1" msg={this.props.msg}/>
         <span className="col-p100 info"></span>

@@ -21,7 +21,18 @@ app.route('/register')
     });
   })
   .post((req, result) => {
-    result.send("Post it!");
+    var db = mongojs('mysite', ['users']);
+    var email = req.body.email;
+    var password = req.body.password1;
+
+    if(password != req.body.password2) {
+      var body = AuthView.register("Please match passwords");
+      // render file with param
+      result.render('layout/overlay', {
+        title: 'Register',
+        body: body
+      });
+    }
   })
 
 app.listen(3001, () => {

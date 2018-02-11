@@ -184,7 +184,7 @@ var Pssword = function (_React$Component4) {
       if (this.props.msg) {
         ch.push(_react2.default.createElement(
           'div',
-          { className: 'error-message' },
+          { className: 'error-message', key: 'error' },
           this.props.msg
         ));
       }
@@ -216,7 +216,7 @@ var Register = function (_React$Component5) {
     value: function render() {
       return _react2.default.createElement(
         'form',
-        { method: 'post', acceptCharset: 'utf-8', action: '/u/register' },
+        { method: 'post', acceptCharset: 'utf-8', action: '/register' },
         _react2.default.createElement(Email, null),
         _react2.default.createElement(Pssword, { twice: '1', msg: this.props.msg }),
         _react2.default.createElement('span', { className: 'col-p100 info' }),
