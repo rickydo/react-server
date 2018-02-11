@@ -8,10 +8,15 @@ app.use(express.static('public'));
 
 // when things are posted make sure we can access it
 app.use(bodyParser.urlencoded({extended: true}));
+app.set('view engine', 'ejs');
 
 app.route('/register')
   .get((req, result) => {
-    result.send("Get it!");
+    // render file with param
+    result.render('layout/overlay', {
+      title: 'Register',
+      body: 'I get it!'
+    });
   })
   .post((req, result) => {
     result.send("Post it!");
