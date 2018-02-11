@@ -21,16 +21,31 @@ app.route('/register').get(function (req, result) {
     body: body
   });
 }).post(function (req, result) {
-  var db = mongojs('mysite', ['users']);
+  var db = mongojs('mongo-sample', ['users']);
   var email = req.body.email;
   var password = req.body.password1;
+  var postRes = result;
 
   if (password != req.body.password2) {
     var body = AuthView.register("Please match passwords");
-    // render file with param
+
     result.render('layout/overlay', {
       title: 'Register',
       body: body
+    });
+  } else {
+    db.users.count({
+      email: email
+    }, function (req, res) {
+      if (res) {
+        postRes.redirect("/login");
+      } else {
+        db.users.insert({
+          email: email,
+          password: password
+        });
+        postRes.send("you have been added!");
+      }
     });
   }
 });
